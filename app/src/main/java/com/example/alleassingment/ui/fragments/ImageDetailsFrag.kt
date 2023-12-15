@@ -10,17 +10,17 @@ import android.view.ViewGroup
 import androidx.fragment.app.FragmentTransaction
 import androidx.fragment.app.activityViewModels
 import com.bumptech.glide.Glide
-import com.example.alleassingment.MainActivity
+import com.example.alleassingment.ui.MainActivity
 import com.example.alleassingment.R
 import com.example.alleassingment.databinding.FragmentImageDetailsBinding
 import com.example.alleassingment.ui.ImageDetails
 import com.example.alleassingment.ui.ImageDetailsViewModel
 import com.google.android.material.chip.Chip
-import com.util.ImageLabelingHelper
-import com.util.RecognizeText
-import com.util.TextRecognitionListener
-import com.util.ValueFragment
-import com.util.collectItems
+import com.example.alleassingment.util.ImageLabelingHelper
+import com.example.alleassingment.util.RecognizeText
+import com.example.alleassingment.util.TextRecognitionListener
+import com.example.alleassingment.util.ValueFragment
+import com.example.alleassingment.util.collectItems
 
 
 class ImageDetailsFrag :

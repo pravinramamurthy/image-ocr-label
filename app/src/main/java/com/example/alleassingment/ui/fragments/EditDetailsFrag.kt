@@ -4,19 +4,16 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentTransaction
 import androidx.fragment.app.activityViewModels
-import com.example.alleassingment.MainActivity
+import com.example.alleassingment.ui.MainActivity
 import com.example.alleassingment.R
 import com.example.alleassingment.databinding.FragmentEditDetailsBinding
-import com.example.alleassingment.databinding.FragmentImageDetailsBinding
 import com.example.alleassingment.ui.ImageDetails
 import com.example.alleassingment.ui.ImageDetailsViewModel
 import com.example.alleassingment.ui.bottomsheet.EditCollectionsBottomSheet
 import com.google.android.material.chip.Chip
-import com.util.ValueFragment
-import com.util.collectItems
+import com.example.alleassingment.util.ValueFragment
+import com.example.alleassingment.util.collectItems
 
 
 class EditDetailsFrag : ValueFragment<FragmentEditDetailsBinding>(R.layout.fragment_edit_details) {

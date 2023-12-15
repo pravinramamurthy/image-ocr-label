@@ -25,7 +25,7 @@ import com.example.alleassingment.databinding.FragmentImageSelectionScreenBindin
 import com.example.alleassingment.model.ImageModel
 import com.example.alleassingment.ui.ImageDetailsViewModel
 import com.example.alleassingment.ui.adapter.ImageAdapter
-import com.util.ValueFragment
+import com.example.alleassingment.util.ValueFragment
 import java.io.FileNotFoundException
 import java.io.IOException
 import java.io.InputStream

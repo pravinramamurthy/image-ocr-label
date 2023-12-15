@@ -1,4 +1,4 @@
-package com.util
+package com.example.alleassingment.util
 
 import android.graphics.Bitmap
 import android.util.Log

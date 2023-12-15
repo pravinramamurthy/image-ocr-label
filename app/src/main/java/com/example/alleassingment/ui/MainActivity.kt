@@ -1,4 +1,4 @@
-package com.example.alleassingment
+package com.example.alleassingment.ui
 
 import android.os.Bundle
 import android.view.View
@@ -7,9 +7,8 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
-import androidx.fragment.app.activityViewModels
+import com.example.alleassingment.R
 import com.example.alleassingment.databinding.ActivityMainBinding
-import com.example.alleassingment.ui.ImageDetailsViewModel
 import com.example.alleassingment.ui.fragments.ImageDetailsFrag
 import com.example.alleassingment.ui.fragments.ImageSelectionScreen
 
