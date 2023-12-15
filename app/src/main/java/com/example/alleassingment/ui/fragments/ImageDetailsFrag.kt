@@ -10,17 +10,17 @@ import android.view.ViewGroup
 import androidx.fragment.app.FragmentTransaction
 import androidx.fragment.app.activityViewModels
 import com.bumptech.glide.Glide
-import com.example.alleassingment.ui.MainActivity
 import com.example.alleassingment.R
 import com.example.alleassingment.databinding.FragmentImageDetailsBinding
 import com.example.alleassingment.ui.ImageDetails
 import com.example.alleassingment.ui.ImageDetailsViewModel
-import com.google.android.material.chip.Chip
+import com.example.alleassingment.ui.MainActivity
 import com.example.alleassingment.util.ImageLabelingHelper
 import com.example.alleassingment.util.RecognizeText
 import com.example.alleassingment.util.TextRecognitionListener
 import com.example.alleassingment.util.ValueFragment
 import com.example.alleassingment.util.collectItems
+import com.google.android.material.chip.Chip
 
 
 class ImageDetailsFrag :
@@ -60,18 +60,11 @@ class ImageDetailsFrag :
 
         onBackPressed {
             model.screenData = null
-           requireActivity().finish()
+            requireActivity().finish()
         }
 
     }
-    fun navigateToSelectFrag() {
-        val nextFragment = ImageSelectionScreen()
-        val transaction: FragmentTransaction =
-            requireActivity().supportFragmentManager.beginTransaction()
-        transaction.replace(R.id.fragment_container, nextFragment)
-       // transaction.addToBackStack(null)
-        transaction.commit()
-    }
+
     override fun onResume() {
         super.onResume()
         (activity as? MainActivity)?.showBottomNavigation()
@@ -147,7 +140,10 @@ class ImageDetailsFrag :
     }
 
     fun fetchText() {
+        //Read text from image using ML-Kit
         RecognizeText.getTextFromImage(bitmap, this)
+
+        //Generate labels from image using ML-Kit
         imageLabelingHelper.labelImage(bitmap) { labels ->
             labelList = labels
             printTags(labels)

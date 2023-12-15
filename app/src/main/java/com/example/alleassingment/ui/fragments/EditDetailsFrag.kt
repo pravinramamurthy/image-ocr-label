@@ -121,6 +121,8 @@ class EditDetailsFrag : ValueFragment<FragmentEditDetailsBinding>(R.layout.fragm
     }
 
     companion object {
+        const val TAG = "EditDetailsFrag"
+
     }
 
 }

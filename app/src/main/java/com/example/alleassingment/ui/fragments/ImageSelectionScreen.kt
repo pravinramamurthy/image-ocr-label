@@ -94,16 +94,6 @@ class ImageSelectionScreen :
         }
     }
 
-    fun navigateToNextFrag(bundle: Bundle) {
-        val nextFragment = ImageDetailsFrag()
-        nextFragment.arguments = bundle
-        val transaction: FragmentTransaction =
-            requireActivity().supportFragmentManager.beginTransaction()
-        transaction.replace(R.id.fragment_container, nextFragment)
-        transaction.addToBackStack(null)
-        transaction.commit()
-    }
-
     private fun uriToBitmap(uri: Uri): Bitmap? {
         var inputStream: InputStream? = null
         try {
@@ -124,9 +114,11 @@ class ImageSelectionScreen :
 
     private fun fetchImages() {
         if (checkPermission()) {
+            //if storage permission granted will fetch images
             setupRecyclerView(getAllImages())
             Log.d(TAG, "fetchImages: ${getAllImages()}")
         } else {
+            // request for storage permission
             requestPermission()
         }
     }
@@ -137,8 +129,6 @@ class ImageSelectionScreen :
             MediaStore.Images.Media._ID,
             MediaStore.Images.Media.DATA
         )
-        val selection = "${MediaStore.Images.Media.MIME_TYPE}=?"
-        val selectionArgs = arrayOf("image/jpeg", "image/png")
         val cursor = context?.contentResolver?.query(
             MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
             projection,

@@ -10,7 +10,3 @@ fun <T> Flow<T>.collectItems(
 ) = owner.lifecycleScope.launch {
     flowWithLifecycle(owner.lifecycle,Lifecycle.State.STARTED).collect { emitData?.invoke(it) }
 }
-
-//    owner.lifecycleScope.launch {
-//    owner.repeatOnLifecycle(lifecycleState){collect{ emitData?.invoke(it) } }
-//}

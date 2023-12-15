@@ -8,6 +8,7 @@ import com.google.mlkit.vision.label.ImageLabeling
 import com.google.mlkit.vision.label.defaults.ImageLabelerOptions
 
 class ImageLabelingHelper {
+    private val TAG = "ImageLabelingHelper"
 
     private val imageLabeler: ImageLabeler by lazy {
         val options = ImageLabelerOptions.Builder()
@@ -28,7 +29,7 @@ class ImageLabelingHelper {
                 onLabelsReceived(labelList)
             }
             .addOnFailureListener { e ->
-                Log.e("ImageLabeling", "Labeling failed: $e")
+                Log.e(TAG, "Labeling failed: $e")
                 onLabelsReceived(emptyList())
             }
     }

@@ -59,9 +59,6 @@ interface OnBackPressed {
 
 abstract class ValueFragment<T : ViewBinding>(@LayoutRes fragxml: Int) : Fragment(fragxml),
     OnBackPressedDelegation by OnBackPressedDelegationImpl(), OnBackPressed {
-
-//    protected val binding by viewBinding(::attachBinding)
-    //abstract fun attachBinding(view: View): T
     override fun onBackPressed(block: () -> Unit) {
         registerOnBackPressedDelegation(requireActivity(), viewLifecycleOwner.lifecycle) {
             block()
